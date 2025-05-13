@@ -6,6 +6,7 @@ import HeroSection from '@/components/HeroSection';
 import FeaturedProducts from '@/components/FeaturedProducts';
 import SpecsComparison from '@/components/SpecsComparison';
 import Testimonials from '@/components/Testimonials';
+import ParallaxSection from '@/components/ParallaxSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, ShieldCheck, Truck } from 'lucide-react';
@@ -19,7 +20,47 @@ const Index = () => {
         <FeaturedProducts />
         <BrandsShowcase />
         <SpecsComparison />
+        
+        <ParallaxSection 
+          imageUrl="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1442&auto=format&fit=crop" 
+          speed={0.3}
+          className="py-24"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-xl mx-auto text-center bg-background/80 backdrop-blur-sm p-8 rounded-lg border border-border">
+              <h2 className="text-3xl font-bold mb-4">Ultimate Gaming Experience</h2>
+              <p className="text-muted-foreground mb-6">
+                Elevate your gameplay with cutting-edge technology designed for the most demanding games. 
+                Our laptops are built for performance, reliability, and immersive experiences.
+              </p>
+              <Button asChild size="lg">
+                <Link to="/products">Explore Collection</Link>
+              </Button>
+            </div>
+          </div>
+        </ParallaxSection>
+        
         <FeaturesSection />
+        
+        <ParallaxSection 
+          imageUrl="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1470&auto=format&fit=crop" 
+          speed={0.4}
+          className="py-24"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto text-center bg-background/80 backdrop-blur-sm p-8 rounded-lg border border-border">
+              <h2 className="text-3xl font-bold mb-4">Built for Gamers, By Gamers</h2>
+              <p className="text-muted-foreground mb-6">
+                Every product in our collection is carefully selected and tested by our team of 
+                gaming enthusiasts to ensure it meets the highest standards of performance and durability.
+              </p>
+              <Button asChild variant="outline" size="lg">
+                <Link to="/about">Our Story</Link>
+              </Button>
+            </div>
+          </div>
+        </ParallaxSection>
+        
         <Testimonials />
         <CallToAction />
       </main>
